@@ -55,11 +55,22 @@ function email (name = "") {
   return name ? `Hi ${name}` : "Hi";
 };
 
+function add (addend1, addend2) {
+  return addend1 + addend2;
+}
+
+function realAddition (addend1, addend2, done) {
+  console.log(add(addend1, addend2));
+  done();
+}
+
 module.exports = {
   reassignment,
   reassignmentInConditional,
   reassignmentNestedInConditional,
   reassignmentNestedInConditionalWithMemoizedOperation,
   reassignmentWithoutNestingInConditional,
-  email
+  email,
+  add,
+  realAddition
 };
