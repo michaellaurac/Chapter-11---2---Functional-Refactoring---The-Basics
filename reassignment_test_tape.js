@@ -4,13 +4,16 @@ const fileName = () => {
 };
 
 const test = require("tape");
+const testDouble = require("testdouble");
 const {
   reassignment,
   reassignmentInConditional,
   reassignmentNestedInConditional,
   reassignmentNestedInConditionalWithMemoizedOperation,
   reassignmentWithoutNestingInConditional,
-  email
+  email,
+  add,
+  realAddition
 } = require("./reassignment.js");
 
 // setup test
@@ -140,4 +143,28 @@ test("verifiers that the function returns 8", (assert) => {
 test("verifiers that the function returns 8", (assert) => {
   assert.strictEqual(((x, y) => x + y)(3, 5), 8);
   assert.end();
+});
+
+// functional tests
+test("verifiers that the function add with 2 and 3 returns 5", (assert) => {
+  assert.strictEqual(add(2, 3), 5);
+  assert.end();
+});
+test("verifiers that the function setGlobalFromAddition with 2 and 3 returns 5", (assert) => {
+  let x;
+  function setGlobalFromAddition (addend1, addend2) {
+    x = add(addend1, addend2);
+  }
+  setGlobalFromAddition(2, 3);
+  assert.strictEqual(x, 5);
+  assert.end();
+});
+test("verifies that calling realAddition with 2 and 3 and the test function is equivalent to loggin 5", (assert) => {
+  testDouble.replace(console, "log");
+  realAddition(2, 3, () => {
+    testDouble.verify(console.log(5));
+    assert.pass();
+    testDouble.reset();
+    assert.end();
+  });
 });
