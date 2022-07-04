@@ -19,8 +19,33 @@ function reassignmentNestedInConditional (numberX, numberY) {
   }
 }
 
+const lookupTable = {};
+function memoizedAddSeven (number) {
+  if (number in lookupTable) {
+    return lookupTable[number];
+  } else {
+    const reduceValue = number + 7;
+    lookupTable[number] = reduceValue;
+    console.log(lookupTable);
+    return reduceValue;
+  }
+}
+
+function reassignmentNestedInConditionalWithMemoizedOperation (numberX, numberY) {
+  if (numberX > 1000) {
+    return numberX;
+  } else {
+    if (memoizedAddSeven(numberX) >= 9) {
+      return memoizedAddSeven(numberX);
+    } else {
+      return numberY;
+    }
+  }
+}
+
 module.exports = {
   reassignment,
   reassignmentInConditional,
-  reassignmentNestedInConditional
+  reassignmentNestedInConditional,
+  reassignmentNestedInConditionalWithMemoizedOperation
 };
