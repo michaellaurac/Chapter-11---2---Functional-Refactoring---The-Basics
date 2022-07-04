@@ -6,4 +6,18 @@ function reassignmentInConditional (number) {
   return number + 7;
 };
 
-module.exports = { reassignment, reassignmentInConditional };
+function reassignmentNestedInConditional (numberX, numberY) {
+  if (numberX > 1000) {
+    return numberX;
+  } else if ((numberX += 7) >= 9) {
+    return numberX;
+  } else {
+    return numberY;
+  }
+}
+
+module.exports = {
+  reassignment,
+  reassignmentInConditional,
+  reassignmentNestedInConditional
+};

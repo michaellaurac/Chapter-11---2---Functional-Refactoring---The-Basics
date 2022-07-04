@@ -4,7 +4,11 @@ const fileName = () => {
 };
 
 const test = require("tape");
-const { reassignment, reassignmentInConditional } = require("./reassignment.js");
+const {
+  reassignment,
+  reassignmentInConditional,
+  reassignmentNestedInConditional
+} = require("./reassignment.js");
 
 // setup test
 test("verifies the test file name", (assert) => {
@@ -29,5 +33,19 @@ test("verifies that when number is 2 the function returns 9", (assert) => {
 });
 test("verifies that when number is 1 the function returns 1", (assert) => {
   assert.strictEqual(reassignmentInConditional(1), 8);
+  assert.end();
+});
+
+// functional tests
+test("verifies that when numberX is 1001 and numberY is 2 the function returns 1001", (assert) => {
+  assert.strictEqual(reassignmentInConditional(1001, 99), 1008);
+  assert.end();
+});
+test("verifies that when number is 2 the function returns 9", (assert) => {
+  assert.strictEqual(reassignmentInConditional(2, 99), 9);
+  assert.end();
+});
+test("verifies that when number is 1 the function returns 1", (assert) => {
+  assert.strictEqual(reassignmentInConditional(1, 99), 8);
   assert.end();
 });
