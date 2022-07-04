@@ -52,12 +52,7 @@ function reassignmentWithoutNestingInConditional (numberX, numberY) {
 }
 
 function email (name = "") {
-  if (name) {
-    emailSubject = `Hi ${name}`;
-  } else {
-    emailSubject = "Hi";
-  }
-  return emailSubject;
+  return name ? `Hi ${name}` : "Hi";
 };
 
 module.exports = {
