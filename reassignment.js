@@ -41,9 +41,20 @@ function reassignmentNestedInConditionalWithMemoizedOperation (numberX, numberY)
   }
 }
 
+function reassignmentWithoutNestingInConditional (numberX, numberY) {
+  if (numberX > 1000) {
+    return numberX;
+  } else if (numberX >= 2) {
+    return numberX + 7;
+  } else {
+    return numberY;
+  }
+}
+
 module.exports = {
   reassignment,
   reassignmentInConditional,
   reassignmentNestedInConditional,
-  reassignmentNestedInConditionalWithMemoizedOperation
+  reassignmentNestedInConditionalWithMemoizedOperation,
+  reassignmentWithoutNestingInConditional
 };

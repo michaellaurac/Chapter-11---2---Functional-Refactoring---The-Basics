@@ -9,7 +9,7 @@ const {
   reassignmentInConditional,
   reassignmentNestedInConditional,
   reassignmentNestedInConditionalWithMemoizedOperation,
-  lookupTable
+  reassignmentWithoutNestingInConditional
 } = require("./reassignment.js");
 
 // setup test
@@ -63,5 +63,19 @@ test("verifies that when numberX is 2 and numberY is 99 the function returns 9",
 });
 test("verifies that when numberX is 1 and numberY is 99 the function returns 99", (assert) => {
   assert.strictEqual(reassignmentNestedInConditionalWithMemoizedOperation(1, 99), 99);
+  assert.end();
+});
+
+// functional tests
+test("verifies that when numberX is 1001 and numberY is 2 the function returns 1001", (assert) => {
+  assert.strictEqual(reassignmentWithoutNestingInConditional(1001, 99), 1001);
+  assert.end();
+});
+test("verifies that when numberX is 2 and numberY is 99 the function returns 9", (assert) => {
+  assert.strictEqual(reassignmentWithoutNestingInConditional(2, 99), 9);
+  assert.end();
+});
+test("verifies that when numberX is 1 and numberY is 99 the function returns 99", (assert) => {
+  assert.strictEqual(reassignmentWithoutNestingInConditional(1, 99), 99);
   assert.end();
 });
