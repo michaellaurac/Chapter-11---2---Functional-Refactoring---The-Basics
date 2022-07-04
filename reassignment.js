@@ -2,4 +2,12 @@ function reassignment (number) {
   return number >= 2 ? number + 7 : number;
 };
 
-module.exports = { reassignment };
+function reassignmentInConditional (number) {
+  if ((number += 7) >= 9) {
+    return number;
+  } else {
+    return number;
+  }
+};
+
+module.exports = { reassignment, reassignmentInConditional };
