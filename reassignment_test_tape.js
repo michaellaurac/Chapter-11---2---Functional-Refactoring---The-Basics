@@ -38,14 +38,14 @@ test("verifies that when number is 1 the function returns 1", (assert) => {
 
 // functional tests
 test("verifies that when numberX is 1001 and numberY is 2 the function returns 1001", (assert) => {
-  assert.strictEqual(reassignmentInConditional(1001, 99), 1008);
+  assert.strictEqual(reassignmentNestedInConditional(1001, 99), 1001);
   assert.end();
 });
 test("verifies that when number is 2 the function returns 9", (assert) => {
-  assert.strictEqual(reassignmentInConditional(2, 99), 9);
+  assert.strictEqual(reassignmentNestedInConditional(2, 99), 9);
   assert.end();
 });
 test("verifies that when number is 1 the function returns 1", (assert) => {
-  assert.strictEqual(reassignmentInConditional(1, 99), 8);
+  assert.strictEqual(reassignmentNestedInConditional(1, 99), 99);
   assert.end();
 });

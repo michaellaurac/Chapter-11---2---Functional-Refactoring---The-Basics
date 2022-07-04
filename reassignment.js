@@ -9,8 +9,8 @@ function reassignmentInConditional (number) {
 function reassignmentNestedInConditional (numberX, numberY) {
   if (numberX > 1000) {
     return numberX;
-  } else if ((numberX += 7) >= 9) {
-    return numberX;
+  } else if ((numberX + 7) >= 9) {
+    return numberX + 7;
   } else {
     return numberY;
   }
