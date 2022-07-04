@@ -34,12 +34,10 @@ function memoizedAddSeven (number) {
 function reassignmentNestedInConditionalWithMemoizedOperation (numberX, numberY) {
   if (numberX > 1000) {
     return numberX;
+  } else if (memoizedAddSeven(numberX) >= 9) {
+    return memoizedAddSeven(numberX);
   } else {
-    if (memoizedAddSeven(numberX) >= 9) {
-      return memoizedAddSeven(numberX);
-    } else {
-      return numberY;
-    }
+    return numberY;
   }
 }
 
