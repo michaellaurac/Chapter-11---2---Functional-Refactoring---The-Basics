@@ -3,11 +3,7 @@ function reassignment (number) {
 };
 
 function reassignmentInConditional (number) {
-  if ((number + 7) >= 9) {
-    return number + 7;
-  } else {
-    return number + 7;
-  }
+  return number + 7;
 };
 
 module.exports = { reassignment, reassignmentInConditional };
