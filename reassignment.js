@@ -7,10 +7,11 @@ function reassignmentInConditional (number) {
 };
 
 function reassignmentNestedInConditional (numberX, numberY) {
+  const newX = numberX + 7;
   if (numberX > 1000) {
     return numberX;
-  } else if ((numberX + 7) >= 9) {
-    return numberX + 7;
+  } else if (newX >= 9) {
+    return newX;
   } else {
     return numberY;
   }
