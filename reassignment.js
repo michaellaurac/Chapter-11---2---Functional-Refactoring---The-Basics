@@ -51,10 +51,19 @@ function reassignmentWithoutNestingInConditional (numberX, numberY) {
   }
 }
 
+function email (name = "") {
+  let emailSubject = "Hi";
+  if (name) {
+    emailSubject += " " + name;
+  }
+  return emailSubject;
+};
+
 module.exports = {
   reassignment,
   reassignmentInConditional,
   reassignmentNestedInConditional,
   reassignmentNestedInConditionalWithMemoizedOperation,
-  reassignmentWithoutNestingInConditional
+  reassignmentWithoutNestingInConditional,
+  email
 };

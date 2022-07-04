@@ -9,7 +9,8 @@ const {
   reassignmentInConditional,
   reassignmentNestedInConditional,
   reassignmentNestedInConditionalWithMemoizedOperation,
-  reassignmentWithoutNestingInConditional
+  reassignmentWithoutNestingInConditional,
+  email
 } = require("./reassignment.js");
 
 // setup test
@@ -97,5 +98,15 @@ test("verifiers that the filter function run on [3, 4, 2] yields [4, 2]", (asser
 });
 test("verifiers that the reduce function run on [3, 4, 2] yields 9", (assert) => {
   assert.strictEqual([3, 4, 2].reduce((element, accumulator) => element + accumulator), 9);
+  assert.end();
+});
+
+// functional tests
+test("verifiers that the email function run with nothing yields \"Hi\"", (assert) => {
+  assert.strictEqual(email(), "Hi");
+  assert.end();
+});
+test("verifiers that the email function run with \"Mike\" yields \"Hi Mike\"", (assert) => {
+  assert.strictEqual(email("Mike"), "Hi Mike");
   assert.end();
 });
