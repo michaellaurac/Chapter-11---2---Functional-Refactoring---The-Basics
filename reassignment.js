@@ -52,9 +52,10 @@ function reassignmentWithoutNestingInConditional (numberX, numberY) {
 }
 
 function email (name = "") {
-  let emailSubject = "Hi";
   if (name) {
-    emailSubject += " " + name;
+    emailSubject = `Hi ${name}`;
+  } else {
+    emailSubject = "Hi";
   }
   return emailSubject;
 };
