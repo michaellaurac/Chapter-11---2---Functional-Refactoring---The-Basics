@@ -3,10 +3,10 @@ function reassignment (number) {
 };
 
 function reassignmentInConditional (number) {
-  if ((number += 7) >= 9) {
-    return number;
+  if ((number + 7) >= 9) {
+    return number + 7;
   } else {
-    return number;
+    return number + 7;
   }
 };
 
