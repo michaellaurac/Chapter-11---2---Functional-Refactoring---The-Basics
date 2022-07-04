@@ -110,3 +110,34 @@ test("verifiers that the email function run with \"Mike\" yields \"Hi Mike\"", (
   assert.strictEqual(email("Mike"), "Hi Mike");
   assert.end();
 });
+
+// functional tests
+test("verifiers that the function returns 5", (assert) => {
+  function five () { return 5; };
+  assert.strictEqual(five(), 5);
+  assert.end();
+});
+test("verifiers that the function returns 5", (assert) => {
+  assert.strictEqual((() => 5)(), 5);
+  assert.end();
+});
+test("verifiers that the function returns 5", (assert) => {
+  assert.strictEqual(((x) => x)(5), 5);
+  assert.end();
+});
+test("verifiers that the function returns 8", (assert) => {
+  assert.strictEqual(3 + 5, 8);
+  assert.end();
+});
+test("verifiers that the function returns 8", (assert) => {
+  assert.strictEqual((() => 3)() + (() => 5)(), 8);
+  assert.end();
+});
+test("verifiers that the function returns 8", (assert) => {
+  assert.strictEqual(((x) => x)(3) + ((y) => y)(5), 8);
+  assert.end();
+});
+test("verifiers that the function returns 8", (assert) => {
+  assert.strictEqual(((x, y) => x + y)(3, 5), 8);
+  assert.end();
+});
